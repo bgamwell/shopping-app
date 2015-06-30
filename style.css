@@ -1,0 +1,16 @@
+body {
+  font-size: 28px;
+  font-family: 'Lora', serif;
+}
+
+#item-list {
+
+}
+
+.container {
+
+}
+
+.done {
+  text-decoration: line-through;
+}
