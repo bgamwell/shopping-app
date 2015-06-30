@@ -1,14 +1,17 @@
 body {
-  font-size: 28px;
   font-family: 'Lora', serif;
 }
 
-#item-list {
-
+h1 {
+  font-size: 36px;
 }
 
-.container {
+p {
+  font-size: 14px;
+}
 
+.food-item {
+  font-size: 28px;
 }
 
 .done {

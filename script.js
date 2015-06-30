@@ -1,48 +1,41 @@
 $(function() {
 
-  console.log("Loaded!");
+  // Variables //
 
   var $newItem = $("#new-item");
 
-  var $itemName = $("#item-name")
+  var $itemName = $("#item-name");
 
   var $allItems = $("#item-list");
 
-  var $item = $(".item");
-
   var $reset = $("#reset");
 
-  // var allItems = $("grocery-list");
+  var $foodItem = $(".food-item");
 
-  // var $allIndividualItems = $(".item")
+  var $shoppingList = []; // saves all user submissions in an array
 
-  // $newItem.submit(function() {
-  //
-  // });
+  // Application Logic //
 
   $newItem.on("submit", function(event) {
-    console.log($itemName);
     event.preventDefault(); //prevents page from reloading
     if ($itemName.val() == "" ) {
       alert("Please enter an item!");
     } else {
-      console.log($itemName);
-      $allItems.append("<li class='food item'>" + $itemName.val() + "</li>");
+      // console.log($itemName);
+      $allItems.append("<li class='food-item'>" + $itemName.val() + "</li>");
+      $shoppingList.push($itemName.val().toString());
       $newItem[0].reset();
-    // .val pulls the value out of a form
     };
   });
 
-  $reset.on("click", function () {
-    $allItems.empty();
+  $reset.on("click", function(event) {
+    $allItems.remove();
+    $shoppingList = [];
   });
-
-  // $allItems.on("click", function(event){
-  //   $(this).addClass("done")
-  // });
 
   $allItems.on("click", "li", function(event){
     $(this).addClass("done");
+    $(this).animate({opacity: 0.5}, 2000);
     console.log("Class added!");
   });
 
