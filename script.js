@@ -10,8 +10,6 @@ $(function() {
 
   var $reset = $("#reset");
 
-  var $foodItem = $(".food-item");
-
   var $shoppingList = []; // saves all user submissions in an array
 
   // Application Logic //
@@ -22,14 +20,14 @@ $(function() {
       alert("Please enter an item!");
     } else {
       // console.log($itemName);
-      $allItems.append("<li class='food-item'>" + $itemName.val() + "</li>");
+      $allItems.append("<li>" + $itemName.val() + "</li>");
       $shoppingList.push($itemName.val().toString());
       $newItem[0].reset();
     };
   });
 
   $reset.on("click", function(event) {
-    $allItems.remove();
+    $allItems.empty();
     $shoppingList = [];
   });
 
